@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/fav-icon-cube.ico">
+    <title>BLACKPINK | Ticket</title>
+    <link rel="stylesheet" href="styles/styles.css?cb=1">
+    <link href="https://fonts.googleapis.com/css2?family=Fauna+One&family=Playfair+Display&display=swap"
+        rel="stylesheet">
+    <!-- script below for icons -->
+    <script src="https://kit.fontawesome.com/dc43fe7493.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="tickets-body" id="top">
+    <header>
+        <div class="top-bar">
+            <a href="index.html"><img class="mobile-logo" src="images/mobile-logo.png"
+                    alt="Rubix cube-like logo of the band Blackpink"></a>
+
+            <a href="index.html"><img class="desktop-logo" src="images/desktop-logo-pink.png"
+                    alt="Blackpink's official logo"></a>
+
+
+            <a href="#nav" id="btn-nav" class="burger-menu">
+                <span class="hamburger">&#9776;</span>
+                <span class="screen-reader-only">Menu</span>
+            </a>
+
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="nav-a-1">About</a></li>
+                    <li><a href="discography.html">Discography</a></li>
+                    <li><a href="gallery.html" class="nav-a-2">Gallery</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="tickets-wrapper">
+            <form action="/" class="tickets-forms" method="post">
+
+                <div class="tickets-headlines">
+                    <h1>BLACKPINK 2020-2021<br>HYLT WORLD TOUR IN YOUR AREA</h1>
+                    <h2>Enter below to win one of four pairs of tickets to see BLACKPINK perform live!</h2>
+                </div>
+
+                <div class="forms-container">
+                    <div class="forms-container-top">
+                        <div class="form-row form-first-name">
+                            <label for="firstname">First name *</label>
+                            <input type="text" name="firstname" id="firstname" placeholder="First name">
+                        </div>
+                        <div class="form-row form-last-name">
+                            <label for="lastname">Last name *</label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Last name">
+                        </div>
+                        <div class="form-row form-birthday">
+                            <label for="birthday">Birthday *</label>
+                            <input type="date" name="birthday" id="birthday">
+                        </div>
+                    </div>
+                    <div class="forms-container-bottom">
+                        <div class="form-row form-email">
+                            <label for="email">E-mail *</label>
+                            <input type="email" name="email" id="email" placeholder="username@domain.com">
+                        </div>
+                        <div class="form-row form-venue">
+                            <label for="venue">Venue *</label>
+                            <select name="venue" id="venue">
+                                <option value="Vancouver">Select Location</option>
+                                <option value="Vancouver">Vancouver, Canada - BC Stadium</option>
+                                <option value="Seoul">Seoul, South Korea - Olympic Stadium</option>
+                                <option value="Tokyo">Tokyo, Japan - Tokyo Dome</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-tos">
+                    <div class="tos-input">
+                        <input type="checkbox" name="tos" id="tos" value="agree-or-not">
+                    </div>
+                    <div class="tos-label">
+                        <label for="tos">I hereby agree to the <a href="#0">Terms of Service</a> and certify that I am
+                            not a robot</label>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <input type="submit" value="ENTER">
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

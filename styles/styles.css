@@ -1,0 +1,1267 @@
+@charset "utf-8";
+
+/* Google Font Stacks
+font-family: 'Playfair Display', serif;
+font-family: 'Fauna One', serif;
+*/
+
+/* ==================================== GENERAL RESET ==================================== */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height   : auto;
+    /* Removes the 4px of white space between images...  */
+    display  : block;
+}
+
+body {
+    margin             : 0;
+    padding            : 0;
+    /* font-family     : 'Playfair Display', serif; */
+    font-family        : 'Fauna One', serif;
+    font-size          : 14px;
+    background-color   : #18181a;
+}
+
+h1,
+h2,
+h3,
+nav a {
+    font-family: 'Playfair Display', serif;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+p {
+    line-height   : 1.7;
+    letter-spacing: 0.5px;
+}
+
+/* removes dotted lines when hovering over a link */
+a {
+    outline: 0;
+}
+
+a:hover,
+a:focus,
+a:active {
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==================================== UTILITY CLASSES ==================================== */
+
+/* makes nav bar in mobile not show "MENU" */
+.screen-reader-only {
+    position: absolute;
+    width   : 1px;
+    height  : 1px;
+    padding : 0;
+    margin  : -1px;
+    overflow: hidden;
+    clip    : rect(0, 0, 0, 0);
+    border  : 0;
+}
+
+/* Back to top button */
+.up-button {
+    position        : fixed;
+    z-index         : 913;
+    bottom          : 10px;
+    right           : 10px;
+    padding         : 10px 10px 8px 10px;
+    border-radius   : 5px;
+    background-color: #18181a;
+    color           : white;
+    border          : 1px solid rgba(128, 128, 128, 0.5);
+    font-size       : 22px;
+}
+
+.up-button:hover,
+.up-button:focus,
+.up-button:active {
+    color: pink;
+}
+
+/* back to top button media queries */
+@media(min-width: 400px) {
+    .up-button {
+        bottom: 20px;
+        right : 20px;
+    }
+}
+
+@media(min-width: 500px) {
+    .up-button {
+        bottom: 27px;
+        right : 27px;
+    }
+}
+
+@media(min-width: 800px) {
+    .up-button {
+        bottom   : 35px;
+        right    : 35px;
+        font-size: 22px;
+        padding  : 11px 11px 9px 11px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .up-button {
+        bottom   : 50px;
+        right    : 50px;
+        font-size: 25px;
+        padding  : 12px 12px 10px 12px;
+    }
+}
+
+/* ==================================== MOBILE HOME STYLES ==================================== */
+
+/* ----- Mobile Home Header ----- */
+
+header {
+    position           : absolute;
+    /* background-color: black; */
+    height             : 57px;
+    width              : 100%;
+    z-index            : 9999;
+}
+
+/* mobile logo (rubix cube) */
+/* !!! decided that it looks better without desktop/mobile home logos !!! */
+.mobile-logo {
+    padding: 5px 0px 0px 15px;
+    display: none;
+}
+
+/* turns off desktop logo for mobile view*/
+@media (max-width: 749px) {
+    .desktop-logo {
+        display: none;
+    }
+}
+
+header a {
+    text-decoration: none;
+    color          : black;
+}
+
+/* ----- Mobile Home Nav ----- */
+
+.burger-menu {
+    height       : 48px;
+    font-size    : 40px;
+    display      : block;
+    cursor       : pointer;
+    position     : relative;
+    text-align   : right;
+    padding-right: 15px;
+    color        : rgb(242, 167, 187);
+}
+
+.top-bar {
+    height         : 50px;
+    margin         : 0 auto;
+    display        : flex;
+    justify-content: space-between;
+    flex-wrap      : wrap;
+    align-items    : center;
+}
+
+nav {
+    display      : none;
+    width        : 100%;
+    border-bottom: 40px solid black;
+}
+
+.show nav {
+    display: block;
+}
+
+nav ul {
+    margin    : 0;
+    padding   : 0;
+    list-style: none;
+}
+
+nav a {
+    display         : block;
+    font-size       : 15px;
+    text-align      : right;
+    padding         : 10px 15px;
+    text-transform  : uppercase;
+    letter-spacing  : 2.5px;
+    color           : pink;
+    height          : 75px;
+    padding         : 45px 15px;
+    background-color: black;
+    text-align      : center;
+}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+    color           : black;
+    background-color: whitesmoke;
+}
+
+/* ----- Mobile Home .hero-slider ----- */
+
+.hero-slider {
+    position: relative;
+}
+
+/* Michael Whyte Edits */
+.hero-slideshow {
+    height    : calc(100vh - 50px);
+    max-height: 900px;
+}
+
+.hero-slideshow img {
+    display        : block;
+    width          : 100%;
+    height         : 100%;
+    object-fit     : cover;
+    object-position: bottom center;
+}
+
+
+.hero-slideshow .cycle-pager {
+    position : absolute;
+    z-index  : 300;
+    bottom   : 30px;
+    left     : 50%;
+    transform: translateX(-50%);
+}
+
+.cycle-pager span {
+    font-size: 5em;
+    color    : whitesmoke;
+    cursor   : pointer;
+}
+
+.cycle-pager .cycle-pager-active {
+    color : pink;
+    cursor: pointer;
+}
+
+/* end Michael Whyte edits */
+
+/* buttons */
+.prev,
+.next {
+    position     : absolute;
+    top          : 50%;
+    /* transform : translateY(-50%); */
+    background   : none;
+    border       : none;
+    padding      : 0;
+    cursor       : pointer;
+    z-index      : 100;
+    width        : 16px;
+}
+
+/* positions prev */
+.prev {
+    left: 9px;
+}
+
+/* positions next */
+.next {
+    right: 9px;
+}
+
+/* ----- Mobile Home .articles-section Styles/Effect ----- */
+
+/* debating whether this looks good or not */
+/* .home-articles-section {
+    margin: 2.5% 2.5% 0;
+} */
+
+/* allowing for text-links over images */
+.home-about-article-image,
+.home-gallery-article-image,
+.home-discography-article-image,
+.home-tickets-article-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* positioning said text-link */
+.home-about-article h1,
+.home-discography-article h1,
+.home-gallery-article h1,
+.home-tickets-article h1 {
+    position  : absolute;
+    z-index   : 5;
+    top       : 50%;
+    left      : 50%;
+    transform : translate(-50%, -50%);
+    text-align: center;
+}
+
+/* said text-link's styles */
+.home-about-article a,
+.home-discography-article a,
+.home-gallery-article a,
+.home-tickets-article a {
+    color          : white;
+    text-decoration: none;
+    text-shadow    : 2px 2px black;
+    font-size      : 15px;
+    letter-spacing : 7px;
+    line-height    : 1.8em;
+    text-transform : uppercase;
+}
+
+/* underlining effect on a's hover */
+.home-about-article a::before,
+.home-discography-article a::before,
+.home-gallery-article a::before,
+.home-tickets-article a::before {
+    background-color: white;
+    content         : "";
+    width           : 0;
+    height          : 3px;
+    left            : 0;
+    bottom          : 0;
+    transition      : width 0.5s ease 0s;
+    position        : absolute;
+}
+
+/* underlining effect on a's hover continued */
+.home-about-article a:hover::before,
+.home-about-article a:focus::before,
+.home-about-article a:active::before,
+.home-discography-article a:hover::before,
+.home-discography-article a:focus::before,
+.home-discography-article a:active::before,
+.home-gallery-article a:hover::before,
+.home-gallery-article a:focus::before,
+.home-gallery-article a:active::before,
+.home-tickets-article a:hover::before,
+.home-tickets-article a:focus::before,
+.home-tickets-article a:active::before {
+    width: 100%;
+}
+
+/* hover zoom-in transition speed */
+.home-articles-section img {
+    transition: 1s;
+}
+
+/* makes picture zoom-in effect when hovered */
+.home-about-article-image:hover img,
+.home-about-article-image:focus img,
+.home-about-article-image:active img,
+.home-discography-article-image:hover img,
+.home-discography-article-image:focus img,
+.home-discography-article-image:active img,
+.home-gallery-article-image:hover img,
+.home-gallery-article-image:focus img,
+.home-gallery-article-image:active img,
+.home-tickets-article-image:hover img,
+.home-tickets-article-image:focus img,
+.home-tickets-article-image:active img {
+    transform: scale(1.04);
+}
+
+/* start of specific article styles */
+
+/* about's article image */
+.home-about-article-image {
+    filter: brightness(95%);
+}
+
+.home-about-article-image:hover,
+.home-about-article-image:focus,
+.home-about-article-image:active {
+    filter: brightness(97%);
+}
+
+/* discography's article image */
+.home-discography-article-image {
+    filter: brightness(95%);
+}
+
+.home-discography-article-image:hover,
+.home-discography-article-image:focus,
+.home-discography-article-image:active {
+    filter: brightness(97%);
+}
+
+/* gallery's article image */
+.home-gallery-article-image {
+    filter: brightness(103%);
+}
+
+.home-gallery-article-image:hover,
+.home-gallery-article-image:focus,
+.home-gallery-article-image:active {
+    filter: brightness(104%);
+}
+
+/* ticket's article image */
+.home-ticket-article-image {
+    filter: brightness(102%);
+}
+
+.home-tickets-article-image:hover,
+.home-tickets-article-image:focus,
+.home-ticket-article-image:active {
+    filter: brightness(104%);
+}
+
+/* ----- Mobile Footer ----- */
+
+footer {
+    background-color: #18181a;
+    color           : rgb(167, 167, 167);
+    text-decoration : none;
+    text-transform  : uppercase;
+    text-align      : center;
+    font-family     : 'Fauna One', serif;
+    margin          : 0;
+}
+
+footer h1 {
+    font-size: 13px;
+    color    : whitesmoke;
+}
+
+footer a {
+    color: whitesmoke;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active {
+    color: rgb(242, 167, 187);
+}
+
+/* back to top */
+.footer-back-to-top {
+    /* border : 1px solid green; */
+    padding: 15px 0px 15px 0px;
+}
+
+.footer-back-to-top a {
+    color          : whitesmoke;
+    font-size      : 10px;
+    padding        : 2px 0;
+    text-transform : uppercase;
+    text-decoration: none;
+    transition     : 0.5s ease;
+}
+
+.footer-back-to-top a:hover,
+.footer-back-to-top a:focus,
+.footer-back-to-top a:active {
+    color: rgb(167, 167, 167);
+}
+
+/* blackpink offical socials' icons */
+.footer-upper a {
+    font-size: 20px;
+    padding  : 0 5px;
+}
+
+.footer-upper hr {
+    width        : 72%;
+    margin-bottom: 0px;
+}
+
+/* footer middle (contains author and member socials */
+.footer-middle {
+    /* border   : 1px solid blue; */
+    padding  : 15px 0px 10px 0px;
+    font-size: 11px;
+}
+
+.footer-middle h1 {
+    /* border       : 1px solid salmon; */
+    margin-bottom: 12px;
+    padding      : 0;
+}
+
+.footer-members-socials {
+    /* border     : 1px solid yellow; */
+    padding-top: 10px;
+}
+
+/* copyright footer stuff */
+.footer-lower {
+    font-size: 10px;
+    padding  : 0px 0px 15px 0px;
+}
+
+/* ----- LARGE PHONE HOME STYLES ----- */
+
+@media (min-width: 500px) {
+
+    /* ----- Large Phone Hero Slider ----- */
+
+    .prev,
+    .next {
+        width: 24px;
+    }
+
+    .single-nav-dot {
+        height: 13px;
+        width : 13px;
+    }
+
+    /* ----- Large Phone Home .about-article ----- */
+
+    .home-about-article h1 {
+        font-size: 15px;
+    }
+
+    /* ----- Large Phone Home .members-article ----- */
+
+    .home-about-article a,
+    .home-gallery-article a,
+    .home-discography-article a,
+    .home-tickets-article a {
+        font-size: 20px;
+    }
+}
+
+/* ----- DESKTOP/TABLET HOME STYLES ----- */
+
+@media (min-width: 750px) {
+
+    /* ----- Desktop/Tablet Header and Desktop Logo ----- */
+
+    /* turns off black header border from mobile view */
+    header {
+        height: 0;
+    }
+
+    /* turns mobile icon off for desktop view */
+    .mobile-logo {
+        display: none;
+    }
+
+    /* desktop icon on for desktop view*/
+    .desktop-logo {
+        /* display    : none; */
+        position   : absolute;
+        top        : 0;
+        left       : 3%;
+        margin     : 0;
+        padding-top: 30px;
+    }
+
+    /* makes desktop logo not appear until >925px */
+    @media (max-width: 925px) {
+        .desktop-logo {
+            display: none;
+        }
+    }
+
+    /* ----- Desktop/Tablet Nav ----- */
+
+    .burger-menu {
+        display: none;
+    }
+
+    .top-bar {
+        height: 0;
+    }
+
+    nav {
+        display      : block;
+        width        : auto;
+        padding      : 0 20px 0 0;
+        margin       : 0;
+        border-bottom: none;
+    }
+
+    nav ul {
+        list-style: none;
+        display   : flex;
+    }
+
+    nav li {
+        flex           : 1;
+        justify-content: space-between;
+    }
+
+    nav a {
+        /* border          : 1px solid red; */
+        background-color: transparent;
+        color           : pink;
+        margin          : 0 10px 0 0;
+        font-size       : 15px;
+        position        : relative;
+    }
+
+    /* line effect */
+    .nav-bar a::before {
+        background-color: pink;
+        content         : "";
+        width           : 0;
+        height          : 3px;
+        bottom          : 0;
+        left            : 0;
+        transition      : width 0.75s ease 0s;
+        position        : absolute;
+    }
+
+    /* line effect continued */
+    .nav-bar a:hover::before,
+    .nav-bar a:focus::before,
+    .nav-bar a:active::before {
+        width: 100%;
+    }
+
+    nav a:hover,
+    nav a:focus,
+    nav a:active {
+        color           : white;
+        background-color: transparent;
+    }
+
+    /* ----- Desktop/Tablet Hero Slider ----- */
+
+    .hero-slideshow {
+        height    : 100vh;
+        max-height: 980px;
+    }
+
+    .hero-slider {
+        padding: 0;
+        margin : 0;
+    }
+
+    .prev,
+    .next {
+        width: 40px;
+    }
+
+    .single-nav-dot {
+        height: 16px;
+        width : 16px;
+    }
+
+    /* ----- Desktop/Tablet .home-section-01 ----- */
+
+    .home-section-01,
+    .home-section-02 {
+        display        : flex;
+        justify-content: space-between;
+    }
+
+    .home-about-article,
+    .home-gallery-article,
+    .home-discography-article,
+    .home-tickets-article {
+        width: 50%;
+    }
+
+    /* ----- Desktop/Tablet Home .members-article ----- */
+
+    .home-about-article a,
+    .home-gallery-article a,
+    .home-discography-article a,
+    .home-tickets-article a {
+        font-size: 30px;
+    }
+
+    /* ----- Desktop/Tablet Footer ----- */
+
+    .footer-back-to-top {
+        padding-top: 40px;
+    }
+
+    .footer-back-to-top a {
+        font-size: 12px;
+    }
+
+    .footer-upper hr {
+        width     : 50%;
+        margin-top: 20px;
+    }
+
+    /* puts author/members' socials side by side */
+    .footer-middle {
+        display: flex;
+    }
+
+    .footer-middle p {
+        line-height: 2em;
+    }
+
+    .footer-about-me,
+    .footer-members-socials {
+        width  : 50%;
+        margin : 0;
+        padding: 10px 0;
+    }
+
+    .footer-about-me {
+        margin-left     : 25%;
+        border-right    : 1px solid rgba(184, 184, 184, 0.562);
+        /* text-align   : right;
+        padding-right   : 2.5%; */
+    }
+
+    .footer-members-socials {
+        margin-right   : 25%;
+        /* text-align  : left;
+        padding-left   : 2.5%; */
+    }
+
+}
+
+/* ==================================== MOBILE ABOUT STYLES ==================================== */
+
+.about-body {
+    background-image     : url("../images/about-bg-300-400.jpg");
+    background-position  : top;
+    background-repeat    : no-repeat;
+    background-attachment: fixed;
+}
+
+/* about's hero */
+.about-hero {
+    height          : 400px;
+    background-color: transparent;
+    position        : relative;
+}
+
+.about-hero-pointer,
+.about-hero-pointer a {
+    position       : absolute;
+    bottom         : 15%;
+    left           : 50%;
+    transform      : translateX(-50%);
+    padding        : 0;
+    margin         : 0;
+    color          : white;
+    font-size      : 10px;
+    line-height    : 5px;
+    text-transform : uppercase;
+    text-align     : center;
+    text-decoration: none;
+    text-shadow    : 2px 2px black;
+}
+
+.about-hero-pointer a:hover,
+.about-hero-pointer a:focus,
+.about-hero-pointer a:active {
+    color: pink;
+}
+
+.about-main p {
+    font-size: 12px;
+}
+
+/* ----- Mobile About Story ----- */
+
+.about-story-heading {
+    /* border          : 2px solid red; */
+    padding         : 0;
+    margin          : 0;
+    background-color: #18181a;
+}
+
+/* includes about members' heading h1 */
+.about-story-heading h1,
+.about-members-heading h1 {
+    padding       : 50px 10px;
+    margin        : 0;
+    text-align    : center;
+    color         : rgb(252, 185, 196);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* adding just a bit more padding (50px->75px) */
+.about-story-heading h1 {
+    padding-top: 75px;
+}
+
+.about-story-text {
+    background-color: #18181a;
+    color           : whitesmoke;
+    padding         : 10px 25px;
+    text-align      : justify;
+    text-align-last : center;
+}
+
+.about-story-text a {
+    text-decoration: none;
+    color          : grey;
+}
+
+/* ----- Mobile About Members ----- */
+
+.about-members-heading {
+    text-align      : center;
+    background-color: #18181a;
+}
+
+/* flexing section */
+.about-members-text-container {
+    background-color: #18181a;
+}
+
+/* members' portraits */
+.about-members-section img {
+    margin : 0 auto;
+    padding: 25px 0 25px;
+}
+
+.about-members-section h2 {
+    color     : whitesmoke;
+    text-align: center;
+    font-size : 18px;
+}
+
+/* bolds info labels */
+.info-bold {
+    font-weight: bold;
+    color      : white;
+}
+
+.about-members-section p {
+    color     : whitesmoke;
+    text-align: center;
+    margin    : 10px 10px 10px 10px;
+    padding   : 0 25px;
+}
+
+.about-members-section hr {
+    width: 50%;
+}
+
+.about-members-section a {
+    color          : pink;
+    text-decoration: none;
+}
+
+/* giving a bit of space between lisa's info and footer */
+.about-lisa {
+    border-bottom: 1px solid transparent;
+}
+
+/* ----- MEDIA QUIRIES FOR ABOUT (FROM LARGE PHONE TO DESKTOP) ----- */
+
+/* changes background image width and about-p's height based on viewing size  */
+@media(min-width: 400px) {
+    .about-body {
+        background-image: url("../images/about-bg-400-500.jpg");
+    }
+
+    .about-hero {
+        height: 500px;
+    }
+}
+
+@media(min-width: 500px) {
+    .about-body {
+        background-image: url("../images/about-bg-500-750.jpg");
+    }
+
+    .about-hero {
+        height: 650px;
+    }
+
+    .about-hero-pointer,
+    .about-hero-pointer a {
+        font-size: 30px;
+    }
+
+    .about-story-heading h1,
+    .about-members-heading h1 {
+        font-size: 27px;
+    }
+
+    .about-main p {
+        font-size: 12.5px;
+
+    }
+
+    .about-story-text {
+        padding: 10px 50px;
+    }
+
+    .about-members-section p {
+        padding: 0 50px;
+    }
+
+    .about-box1,
+    .about-box3,
+    .about-box5,
+    .about-box7 {
+        padding: 0 25px;
+    }
+}
+
+@media(min-width: 750px) {
+    .about-body {
+        background-image: url("../images/about-bg-750-1200.jpg");
+    }
+
+    .about-hero {
+        height: 675px;
+    }
+
+    .about-story-heading h1,
+    .about-members-heading h1 {
+        font-size: 35px;
+    }
+
+    .about-story-text {
+        padding: 10px 100px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .about-body {
+        background-image: url("../images/about-bg-1200-plus.jpg");
+    }
+
+    .about-hero {
+        height: 100vh;
+    }
+
+    .about-story-text {
+        padding: 10px 12%;
+    }
+
+    .about-story-heading h1,
+    .about-members-heading h1 {
+        font-size: 40px;
+    }
+
+    .about-members-text-container {
+        margin: 0 auto;
+    }
+
+    /* flexes  */
+    .about-jisoo,
+    .about-jennie,
+    .about-rose,
+    .about-lisa {
+        display        : flex;
+        flex-direction : row;
+        justify-content: center;
+    }
+
+    /* making text align better with pictures */
+    .jisoo-text,
+    .jennie-text,
+    .rose-text,
+    .lisa-text {
+        padding-top: 40px;
+    }
+
+    /* moving the orders to make alternating pattern */
+    /* assigning orders to boxes to get rid of default order 0, and for easier management */
+    /* desktop view has a different order than mobile*/
+    /* also assigns the width of the boxes */
+    /* also aligns text */
+    .about-box1 {
+        order: 1;
+        width: 40%;
+    }
+
+    .about-box2 {
+        order: 2;
+        width: 40%;
+    }
+
+    .about-box2 p {
+        text-align: justify;
+    }
+
+    .about-box3 {
+        order: 4;
+        width: 40%;
+    }
+
+    .about-box4 {
+        order: 3;
+        width: 40%;
+    }
+
+    .about-box4 p {
+        text-align     : justify;
+        text-align-last: right;
+    }
+
+    .about-box5 {
+        order: 5;
+        width: 40%;
+    }
+
+    .about-box6 {
+        order: 6;
+        width: 40%;
+    }
+
+    .about-box6 p {
+        text-align: justify;
+    }
+
+    .about-box7 {
+        order: 8;
+        width: 40%;
+    }
+
+    .about-box8 {
+        order: 7;
+        width: 40%;
+    }
+
+    .about-box8 p {
+        text-align     : justify;
+        text-align-last: right;
+    }
+}
+
+/* ==================================== MOBILE GALLERY STYLES ==================================== */
+
+/* ----- Mobile Gallery .member-showcase Styles and Effects ----- */
+
+/* all members' boxes */
+.box {
+    width     : 25%;
+    text-align: center;
+    filter    : grayscale(100%);
+    position  : relative;
+}
+
+/* names invisible by default */
+.box h1 {
+    position      : absolute;
+    bottom        : 40%;
+    left          : 50%;
+    transform     : translate(-50%, -50%);
+    color         : transparent;
+    cursor        : default;
+    letter-spacing: 1.5px;
+}
+
+/* names turn visible when hovered over */
+.box:hover,
+.box:focus,
+.box:active,
+.box:hover h1,
+.box:focus h1,
+.box:active h1 {
+    color      : white;
+    text-shadow: 2px 1px black;
+    filter     : brightness(100%);
+}
+
+.gallery-members-showcase {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+/* ==================================== MOBILE TICKETS STYLES ==================================== */
+
+.tickets-wrapper {
+    font-family   : 'Playfair Display', serif;
+    font-size     : 13px;
+    letter-spacing: 1px;
+    position      : relative;
+    margin        : 0 auto;
+    color         : white;
+    text-shadow   : 1px 1px black;
+    font-weight   : bold;
+    width         : 100%;
+    height        : 900px;
+}
+
+.tickets-body {
+    background-image   : url("../images/kia-concert.jpg");
+    background-position: center;
+}
+
+.tickets-forms {
+    position      : absolute;
+    top           : 10%;
+    left          : 50%;
+    transform     : translateX(-50%);
+    margin        : 0;
+    padding       : 0;
+    text-transform: uppercase;
+    width         : 100%;
+    padding       : 25px;
+}
+
+/* ----- Mobile Tickets Header ----- */
+
+.tickets-headlines {
+    background-color: transparent;
+    margin-bottom   : 35px;
+    color           : whitesmoke;
+    text-align      : center;
+}
+
+.tickets-headlines h1 {
+    text-transform: uppercase;
+}
+
+.tickets-headlines h2 {
+    font-size     : 15px;
+    text-transform: none;
+}
+
+/* ----- Mobile Tickets Forms Container  */
+
+/* placeholder text color for chrome/firefox */
+.forms-container input::placeholder {
+    color  : rgba(128, 128, 128, 0.822);
+    opacity: 1;
+}
+
+/* placeholder text color for microsoft edge */
+.forms-container input::-ms-input-placeholder {
+    color: #d84f69;
+}
+
+.form-row label {
+    display       : block;
+    padding-left  : 5px;
+    letter-spacing: 3px;
+}
+
+.form-row input {
+    display      : block;
+    width        : 100%;
+    margin-top   : 10px;
+    margin-bottom: 13px;
+    padding      : 10.5px;
+}
+
+/* making birthday form math the size of other forms */
+.form-birthday input {
+    height: 40px;
+}
+
+/* venue select input */
+select {
+    width     : 100%;
+    margin-top: 10px;
+    padding   : 10px;
+    height    : 40px;
+}
+
+/* TOS */
+.form-tos {
+    font-size          : 10.5px;
+    text-transform     : none;
+    margin-top         : 15px;
+    display            : flex;
+    /* flex-wrap       : wrap; */
+    padding            : 5px;
+    color              : white;
+    background-color   : #18181aa8;
+}
+
+.tos-label a {
+    color: whitesmoke;
+}
+
+.tos-label {
+    margin-left: 10px;
+}
+
+/* submit button */
+.form-submit input {
+    font-family     : 'Fauna One', serif;
+    width           : 100%;
+    margin-top      : 20px;
+    padding         : 10px;
+    letter-spacing  : 2px;
+    color           : white;
+    background-color: #18181a;
+    border          : 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+/* ----- DESKTOP/TABLET TICKET STYLES ----- */
+
+@media (min-width: 810px) {
+
+    .tickets-body {
+        background-image: url("../images/home-slideshow-concert.jpg");
+    }
+
+    .tickets-headlines {
+        margin-bottom: 45px;
+    }
+
+    .tickets-wrapper {
+        width      : 65%;
+        height     : 960px;
+        font-weight: normal;
+    }
+
+    .forms-container label {
+        font-size: 15px;
+    }
+
+    .forms-container-top,
+    .forms-container-bottom {
+        display           : flex;
+        /* flex-wrap      : wrap; */
+        justify-content   : space-evenly;
+        padding           : 0;
+        margin            : 0;
+    }
+
+    .form-first-name,
+    .form-last-name,
+    .form-birthday {
+        width: 30%;
+    }
+
+    .form-email,
+    .form-venue {
+        width: 46%;
+    }
+
+    .form-tos {
+        justify-content : center;
+        background-color: transparent;
+        border          : none;
+    }
+
+    .tos-label {
+        font-size : 12px;
+        margin-top: 1.5px;
+    }
+
+    .form-submit {
+        display: block;
+        margin : 0 auto;
+        width  : 400px;
+    }
+
+
+}
